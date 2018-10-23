@@ -1,0 +1,1 @@
+select employer_name,round((count(case_status)/1551),2) as counts from final where case_status="CERTIFIED" or case_status="CERTIFIED WITHDRAWN" group by employer_name order by counts desc limit 10;

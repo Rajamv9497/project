@@ -1,0 +1,2 @@
+select job_title,avg(prevailing_wage),year,full_time_position from final group by job_title,year,full_time_position sort by year;
+

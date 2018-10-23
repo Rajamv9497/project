@@ -1,0 +1,3 @@
+ hive -e "insert overwrite directory '/hanoid1'row format delimited fields terminated by ',' select job_title,round((count(case_status)/1551),2) as counts from niit.final where case_status='CERTIFIED' or case_status='CERTIFIED WITHDRAWN' group by job_title order by counts desc limit 10;"
+           sqoop export --connect jdbc:mysql://localhost/college --username root --password 'root' --table h1b1 --export-dir /hanoid1/000000_0 --input-fields-terminated-by ',' ;
+           mysql -u root -p -D college -e "select * from h1b1 order by perc desc"

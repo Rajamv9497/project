@@ -1,0 +1,2 @@
+select count(case_status),year from final group by year;
+
